@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
@@ -70,7 +77,6 @@ input[type=search] {
     -webkit-appearance: none;
     -moz-appearance: none;
     -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
@@ -267,7 +273,8 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
     *height: 13px; /* 3 */
     *width: 13px; /* 3 */
@@ -281,7 +288,6 @@ input[type="radio"] {
 
 input[type="search"] {
     -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box; /* 2 */
     box-sizing: content-box;
 }
@@ -397,10 +403,12 @@ textarea {
          url('../fonts/lato-v17-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
   html{
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
   }
   *, *::before, *::after {
-      box-sizing: inherit;
+      -webkit-box-sizing: inherit;
+              box-sizing: inherit;
   }
   body{
     font-family: 'Lato';
@@ -448,6 +456,8 @@ textarea {
      top: 0;
      left: 0;
      width: 100%;
+     -webkit-transition: .2s linear;
+     -o-transition: .2s linear;
      transition: .2s linear;
      z-index: 999;
  }
@@ -456,15 +466,25 @@ textarea {
     opacity: 0.8;
 }
  .header__wrapper{
+     display: -webkit-box;
+     display: -ms-flexbox;
      display: flex;
-     flex-wrap: wrap;
-     align-items: flex-end;
-     justify-content: space-between;
+     -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+     -webkit-box-align: end;
+         -ms-flex-align: end;
+             align-items: flex-end;
+     -webkit-box-pack: justify;
+         -ms-flex-pack: justify;
+             justify-content: space-between;
      padding-top: 36px;
  }
  .header__list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
  }
  .header__item{
      margin-right: 82px;
@@ -497,7 +517,9 @@ textarea {
  }
  .buerger__line_second{
      top: 50%;
-     transform: translateY(-50%);
+     -webkit-transform: translateY(-50%);
+         -ms-transform: translateY(-50%);
+             transform: translateY(-50%);
  }
  .buerger__line_third{
      bottom: 0;
@@ -536,8 +558,11 @@ textarea {
     margin-bottom: 59px;
 }
 .search-form__info{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .search-form__field{
     width: 297px;
@@ -548,6 +573,30 @@ textarea {
     margin-right: 60px;
     padding-left: 43px;
     padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.search-form__field::-webkit-input-placeholder{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.search-form__field::-moz-placeholder{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.search-form__field:-ms-input-placeholder{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.search-form__field::-ms-input-placeholder{
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -584,7 +633,9 @@ textarea {
     max-width: 1262px;
     background-color: #fff;
     margin: 0 auto;
-    box-shadow: 0px 2px 20px
+    -webkit-box-shadow: 0px 2px 20px
+     rgba(21, 24, 36, 0.15993);
+            box-shadow: 0px 2px 20px
      rgba(21, 24, 36, 0.15993);
      position: relative;
 }
@@ -597,17 +648,22 @@ textarea {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
     background-color: #fff;
 }
 .benefits__cards{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 55px 1fr 55px 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 55px;
     grid-row-gap: 55px;
     padding: 0 100px;
 }
 .benefits__card{
+    -ms-grid-column-span: 1;
     grid-column: span 1;
     margin-bottom: 112px;
 }
@@ -637,6 +693,8 @@ textarea {
     color: #006DFE;
     text-decoration: none;
     background: url(../img/svg/arrow-rightsvg.svg) no-repeat 95% center;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
     transition: 0.2s all;
 }
 .benefits__card-more:hover , .benefits__card-more:focus {
@@ -650,10 +708,17 @@ textarea {
     margin-bottom: 131px;
 }
 .places__caption{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;   
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;   
     margin-bottom: 36px; 
 }
 .places__view-all{
@@ -668,7 +733,9 @@ textarea {
     opacity: 0.65;
 }
 .places__cards{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -689,7 +756,9 @@ textarea {
     z-index: 2;
 }
 .places__card:hover .places__card-pic{
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 .places__card-title{
     font-weight: bold;
@@ -702,22 +771,28 @@ textarea {
     z-index: 3;
 }
 .places__card__size__lg{
+    -ms-grid-column-span: 3;
     grid-column: span 3;
 }
 .places__card__size__sm{
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 .places__card-pic{
     width: 100%;
+    -webkit-transition: .15s all;
+    -o-transition: .15s all;
     transition: .15s all;
 }
 .places__card-pic__size__lg{
     height: 354px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .places__card-pic__size__sm{
     height: 283px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .places__card-link{
     position: absolute;
@@ -735,11 +810,15 @@ textarea {
     margin-bottom: 139px;
 }
 .tours__tour{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 108px 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 108px;
     grid-row-gap: 108px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 77px;
 }
 .tour__ml{
@@ -767,6 +846,8 @@ textarea {
     color: #006DFE;
     text-decoration: none;
     background: url(../img/svg/arrow-rightsvg.svg) no-repeat right center;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
     transition: 0.2s all;
 }
 .tour__more:hover , .tour__more:focus{
@@ -784,14 +865,22 @@ textarea {
     margin-bottom: 54px;
 }
 .top__cards{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr;
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 57px;
     grid-row-gap: 57px;
 }
 .top__card{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 .top__card-pic{
@@ -800,10 +889,17 @@ textarea {
 }
 .top__card-stats{
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -883,16 +979,24 @@ textarea {
     padding: 119px 0;
 }
 .footer__item{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .footer__logo{
     width: 50%;
 }
 .footer__nav{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 50%;
 }
 .footer__menu-title{
@@ -937,12 +1041,15 @@ textarea {
         padding: 55px 15px;
     }
     .benefits__wrap{
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
     .places__card__size__lg{
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
     .places__card__size__sm{
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
     .tours__tour{
@@ -962,6 +1069,7 @@ textarea {
         grid-row-gap: 55px;
     }
     .top__card{
+        -ms-grid-column-span: 3;
         grid-column: span 3;
     }
     .top__card-pic{
@@ -997,10 +1105,16 @@ textarea {
         z-index: 10;
         background: #0E1D28;
         padding: 75px;
-        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+                transform: translateX(100%);
     }
     .header__nav_active{
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
+        -webkit-transition: .2s all linear;
+        -o-transition: .2s all linear;
         transition: .2s all linear;
     }
     .header__item{
@@ -1032,10 +1146,14 @@ textarea {
         background-color: #fff;
     }
     .header__nav-close-line:first-child{
-        transform: translateY(-50%) rotate(45deg);
+        -webkit-transform: translateY(-50%) rotate(45deg);
+            -ms-transform: translateY(-50%) rotate(45deg);
+                transform: translateY(-50%) rotate(45deg);
     }
     .header__nav-close-line:last-child{
-        transform: translateY(-50%) rotate(-45deg);
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+            -ms-transform: translateY(-50%) rotate(-45deg);
+                transform: translateY(-50%) rotate(-45deg);
     }
     .intro{
         padding-top: 125px;
@@ -1049,6 +1167,18 @@ textarea {
         width: 100%;
         padding-bottom: 12px;
     }
+    .search-form__field::-webkit-input-placeholder{
+        font-size: 16px;
+    }
+    .search-form__field::-moz-placeholder{
+        font-size: 16px;
+    }
+    .search-form__field:-ms-input-placeholder{
+        font-size: 16px;
+    }
+    .search-form__field::-ms-input-placeholder{
+        font-size: 16px;
+    }
     .search-form__field::placeholder{
         font-size: 16px;
     }
@@ -1059,6 +1189,7 @@ textarea {
         margin-bottom: 36px;
     }
     .benefits__card{
+        -ms-grid-column-span: 3;
         grid-column: span 3;
         margin-bottom: 40px;
     }
@@ -1088,10 +1219,12 @@ textarea {
         margin-bottom: 50px;
     }
     .tour__pic{
+        -ms-grid-column-span: 2;
         grid-column: span 2;
         margin-bottom: -70px;
     }
     .tour__info{
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
     .tour__mr{
@@ -1101,12 +1234,13 @@ textarea {
         margin-left: 0;
     }
     .tour__pic_m_1{
-        grid-row-start: -1;
+            grid-row-start: -1;
     }
     .top{
         margin-bottom: 75px;
     }
     .top__card{
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
     .top__card-stats{
